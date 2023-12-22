@@ -1,0 +1,70 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "Product"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "product_type": {
+      "type": "string"
+    },
+    "product_name": {
+      "type": "string"
+    },
+    "product_img": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "product_code": {
+      "type": "biginteger"
+    },
+    "category": {
+      "type": "string"
+    },
+    "main_unit": {
+      "type": "integer"
+    },
+    "barcode": {
+      "type": "string"
+    },
+    "selling_price": {
+      "type": "integer"
+    },
+    "vat": {
+      "type": "integer"
+    },
+    "product_description": {
+      "type": "text"
+    },
+    "income_account": {
+      "type": "string"
+    },
+    "quantity": {
+      "type": "integer"
+    },
+    "unit_price": {
+      "type": "integer"
+    },
+    "doc_num": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::quotation.quotation",
+      "mappedBy": "product_id"
+    },
+    "total": {
+      "type": "integer"
+    }
+  }
+}

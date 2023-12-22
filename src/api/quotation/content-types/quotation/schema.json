@@ -1,0 +1,98 @@
+{
+  "kind": "collectionType",
+  "collectionName": "quotations",
+  "info": {
+    "singularName": "quotation",
+    "pluralName": "quotations",
+    "displayName": "Quotation",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "status": {
+      "type": "string"
+    },
+    "credit": {
+      "type": "string"
+    },
+    "due_date": {
+      "type": "date"
+    },
+    "sales_name": {
+      "type": "string"
+    },
+    "currency": {
+      "type": "string"
+    },
+    "customers_id": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::customer.customer",
+      "mappedBy": "quotation_id"
+    },
+    "project_id": {
+      "type": "uid"
+    },
+    "total_price": {
+      "type": "integer"
+    },
+    "discount": {
+      "type": "integer"
+    },
+    "discount_percent": {
+      "type": "integer"
+    },
+    "total_after_discount": {
+      "type": "integer"
+    },
+    "vat_include": {
+      "type": "boolean"
+    },
+    "grandtotal": {
+      "type": "integer"
+    },
+    "withholding_tax": {
+      "type": "integer"
+    },
+    "vat_percent": {
+      "type": "integer"
+    },
+    "payment_amount": {
+      "type": "integer"
+    },
+    "electronSignature": {
+      "type": "boolean"
+    },
+    "remarks": {
+      "type": "text"
+    },
+    "notes": {
+      "type": "text"
+    },
+    "img": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "doc_num": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::project.project",
+      "inversedBy": "ref_quotation_id"
+    },
+    "product_id": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product.product",
+      "inversedBy": "doc_num"
+    }
+  }
+}

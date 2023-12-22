@@ -1,0 +1,113 @@
+{
+  "kind": "collectionType",
+  "collectionName": "customers",
+  "info": {
+    "singularName": "customer",
+    "pluralName": "customers",
+    "displayName": "Customer",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "customer_name": {
+      "type": "string"
+    },
+    "address": {
+      "type": "text"
+    },
+    "zipcode": {
+      "type": "biginteger"
+    },
+    "tax_id": {
+      "type": "biginteger",
+      "unique": true
+    },
+    "branch": {
+      "type": "boolean"
+    },
+    "branch_code": {
+      "type": "biginteger"
+    },
+    "branch_name": {
+      "type": "string"
+    },
+    "branch_type": {
+      "type": "string"
+    },
+    "contact_id": {
+      "type": "biginteger",
+      "unique": true
+    },
+    "business_name": {
+      "type": "string"
+    },
+    "contact_name": {
+      "type": "string"
+    },
+    "mobile": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "bank": {
+      "type": "string"
+    },
+    "account_number": {
+      "type": "biginteger"
+    },
+    "bank_branch": {
+      "type": "string"
+    },
+    "account_type": {
+      "type": "string"
+    },
+    "contact_type": {
+      "type": "string"
+    },
+    "credit_date": {
+      "type": "date"
+    },
+    "phone": {
+      "type": "biginteger"
+    },
+    "fax_number": {
+      "type": "biginteger"
+    },
+    "website": {
+      "type": "string"
+    },
+    "shipping_address": {
+      "type": "string"
+    },
+    "attach_file": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "notes": {
+      "type": "text"
+    },
+    "quotation_id": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::quotation.quotation",
+      "inversedBy": "customers_id"
+    },
+    "project_id": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::project.project",
+      "inversedBy": "customers_ids"
+    }
+  }
+}
